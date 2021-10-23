@@ -1,0 +1,36 @@
+<mat-toolbar color="primary" class="mat-elevation-z2">
+  <span>क्षीरधेनु | ksheerdhenu</span>
+  <span class="custom-spacer"></span>
+  <mat-icon>account_circle</mat-icon>&nbsp;
+  <span>Admin Login</span>
+</mat-toolbar>
+
+<div class="center-component">
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-md-6">
+        <mat-card class="mat-elevation-z2">
+          <form novalidate class="form" [formGroup]="loginForm" (ngSubmit)="login()">
+
+            <h2>Welcome Admin</h2>
+
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Email Address</mat-label>
+              <input matInput placeholder="admin@gmail.com" value="" formControlName="email" required
+                [pattern]="emailPattern">
+              <mat-error *ngIf="email.invalid">Enter Valid Email Address</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Password</mat-label>
+              <input matInput placeholder="password" value="" type="password" formControlName="password" required>
+              <mat-error *ngIf="password.invalid">Enter Valid Password</mat-error>
+            </mat-form-field>
+
+            <button mat-raised-button type="submit" color="primary">Login</button>
+          </form>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
